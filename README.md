@@ -11,6 +11,8 @@
 
 IP-адрес 158.160.40.159
 
+я невероятным образом попал в блеклист яндекса эти домены в яндекс браузере не открываются, все работает хорошо с гугла, написал куратору об этом недоразумении, она в курсе
+
 Frontend http://normal.nomoredomainsmonster.ru
 
 Backend http://api.normal.nomoredomainsmonster.ru
