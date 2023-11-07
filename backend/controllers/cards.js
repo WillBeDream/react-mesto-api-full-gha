@@ -28,7 +28,7 @@ module.exports.deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
     .then(((card) => {
       if (!card) {
-        next(new BadRequestError(`Неккоректный id карточки ${req.params.cardId}`));
+        next(new NotFoundError('карточка не найдена'));
       } else {
         if (!card.owner.equals(req.user._id)) {
           throw new ForbiddenErrror('Карточка другого пользователя');
@@ -48,9 +48,7 @@ module.exports.deleteCard = (req, res, next) => {
       }
     }))
     .catch((err) => {
-      if (err.name === 'TypeError') {
-        next(new NotFoundError('Карточка не найдена'));
-      } else if (err instanceof mongoose.Error.CastError) {
+      if (err instanceof mongoose.Error.CastError) {
         next(new BadRequestError('Неккоректный id карточки'));
       } else {
         next(err);
