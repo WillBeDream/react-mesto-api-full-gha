@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.normal.nomoredomainsmonster.ru";
+export const BASE_URL = "https://api.normal.nomoredomainsmonster.ru";
 
 function checkError(res) {
     if(res.ok) {
